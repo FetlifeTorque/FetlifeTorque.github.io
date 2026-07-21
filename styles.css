@@ -1,69 +1,421 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed Meeting</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <nav class="top-nav">
-            <a href="index.html" class="nav-button">← Back to Main Page</a>
-        </nav>
+/* Base styles */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #cccccc;
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-background: rgba(0, 0, 0, 0.85);
+    --accent-color: #c41230;
+    --border-color: #333333;
+    --spacing-sm: 0.35rem;
+    --spacing-md: 0.7rem;
+    --spacing-lg: 1.05rem;
+    --spacing-xl: 1.4rem;
+    --border-radius: 3px;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
 
-        <main>
-            <h1>Speed Meeting</h1>
+/* Banner */
+.banner {
+    width: 100%;
+    height: 200px;
+    max-height: 200px !important;
+    overflow: hidden;
+    position: relative;
+    background: var(--dark-background);
+    line-height: 0;
+}
 
-            <p>Let's say you've groped people on the Rack or the Locker and you liked them, felt a chemistry, and want to stay in touch. What do you do?</p>
+.banner img {
+    width: 100%;
+    height: 200px;
+    max-height: 200px !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
 
-            <section>
-                <h2>What NOT to do</h2>
-                <p>Don't try to negotiate future get togethers, play dates, followups, etc. with 
-                    the people on the Rack.</p>
-                <p>They are in a potentially compromised headspace and situation, and may feel 
-                    pressured to agree to meet you later, or play, or whatever. It's not the right time. 
-                    Don't be creepy.</p>
-            </section>
+/* Typography */
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: url('images/meet_rack_centered.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
 
-            <section>
-                <h2>Instead:</h2>
-                
-                <h3>I'm groping:</h3>
-                <ol>
-                    <li>When you come into the space, there will be tables with bits of paper 
-                        (half index cards), and pens.</li>
-                    <li>Grab a few cards and write some sort of contact information on the card. 
-                        Fetlife alias, or Discord handle are ideal.  Email, phone, etc. are ok.</li>
-                    <li>You can also write something that may help someone remember you:
-                         "The guy with the engineer boots", "The girl with the dragon tattoo" or 
-                         something perhaps memorable.</li>
-                    <li>You're welcome to do this at home before the event if you wish. 
-                        (Just remember, some people's cups runneth over, so just a small slip of paper, 
-                        not a novel.)
-                </ol>
+/* Page Layout */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--card-background);
+}
 
-                <p>As you go around the space, if you want to connect with someone, see if they have a Cup. If so, put one of your cards in the cup.</p>
-                <p>If they don't have a cup, they don't want your contact information. Don't do something creepy like putting your card in their panties. Just move on.</p>
+/* Content Alignment */
+.content-section {
+    width: 80%;
+    max-width: 1080px;
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-md);
+}
 
-                <p>The power to connect lies with the people on the Rack. After the event they will have their cups with papers. If they don't contact you, just move on.</p>
-            </section>
+.centered {
+    text-align: center;
+}
 
-            <section>
-                <h3>I'm going on the Rack/Locker:</h3>
-                <p>If you wish to have people give you their contact information, grab a Cup. We will have ribbons so you can tie the cup onto you, or put it on the ground, etc. Whatever works for you.</p>
-                <p>If you don't want contact information, just don't take a cup, people shouldn't be forcing them onto you, and if they do, please contact a monitor.</p>
-                <p>Lastly, at the end of the event take your slips of paper with you and reach out to whomever you wish. (Or the cup).</p>
-            </section>
+/* Content Width Control */
+.content-container {
+    width: 80%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            <div class="warning">
-                <p>We encourage you NOT to try to negotiate anything with anybody while you're on the Rack… just experience it.</p>
-            </div>
-        </main>
+main {
+    padding: var(--spacing-lg);
+}
 
-        <nav class="bottom-nav">
-            <a href="index.html" class="nav-button">Back to Main Page</a>
-        </nav>
-    </div>
-</body>
-</html>
+main,
+header h1,
+.hero,
+section,
+.info-box,
+.style-box,
+.warning,
+.timeline-grid {
+    width: 80%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Text styles */
+.highlight-text {
+    font-size: 120%;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.rule-emphasis {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.rule-emphasis-green {
+    color: #00b300;
+    font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Droid Sans", Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+h1 { 
+    font-size: 2.2rem; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+}
+
+h2 { 
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+h3 { 
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+header h1 {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: var(--border-radius);
+}
+
+.hero.compact {
+    padding: var(--spacing-lg);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-content {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--secondary-color);
+}
+
+/* Navigation and Buttons */
+.nav-button {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 100px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.nav-button:hover {
+    background-color: #a30d26;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.button-tier {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.button-center {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+/* Content boxes */
+.info-box, .style-box, .key-point {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+}
+
+.info-box header, .style-box header {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 200px;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.info-box header h3, .style-box header h3 {
+    margin: 0;
+}
+
+.info-box header .button-center, .style-box header .button-center {
+    margin: 0;
+    justify-self: end;
+}
+
+/* Ensure consistent button width */
+.button-center .nav-button {
+    width: 180px;
+}
+
+.key-point {
+    background: rgba(196, 18, 48, 0.15);
+    border-left: 4px solid var(--accent-color);
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: var(--spacing-md) 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.5rem;
+    margin: var(--spacing-md) 0;
+    color: var(--text-color);
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline */
+.timeline-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: var(--border-radius);
+}
+
+.time-slot {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--accent-color);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.time-slot .time {
+    font-weight: 600;
+    color: var(--accent-color);
+    text-align: right;
+    padding-right: var(--spacing-md);
+}
+
+.note {
+    font-style: italic;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    margin: var(--spacing-md) 0;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ff1a1a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Typography */
+    body { font-size: 18px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    
+    /* Layout */
+    .container { 
+        width: 100%;
+        min-width: 100%;
+    }
+    main { 
+        padding: var(--spacing-md);
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Content width */
+    main,
+    header h1,
+    .hero,
+    section,
+    .info-box,
+    .style-box,
+    .warning,
+    .timeline-grid {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Header and content boxes */
+    .info-box header,
+    .style-box header {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .info-box header .button-center,
+    .style-box header .button-center {
+        justify-self: center;
+        width: 100%;
+        margin-top: var(--spacing-sm);
+    }
+    
+    /* Buttons */
+    .button-center .nav-button,
+    .nav-button {
+        width: 100%;
+        padding: 0.7rem 1rem;
+    }
+    
+    /* Spacing */
+    .info-box,
+    .style-box,
+    .key-point {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Typography */
+    body { font-size: 16px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.3rem; }
+    
+    /* Timeline */
+    .time-slot {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .time-slot .time {
+        text-align: left;
+        padding-right: 0;
+    }
+    
+    /* Content spacing */
+    section { padding: 0.75rem; }
+    .time-notice { padding: 1rem; }
+    .key-point { padding: 0.75rem; }
+}
