@@ -98,16 +98,16 @@
             <hr>
             <section class="timing">
                 <h2 class="centered">Event Schedule - Saturday Night at Thornwood 2026</h2>
-                <div class="timeline-grid compact">
+                <div class="timeline-grid compact" id="event-schedule">
                     <div class="time-slot setup">
                         <div class="time">6:00 PM</div>
                         <div class="description">Setup</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot monitor-schedule" hidden>
                         <div class="time">7:00 PM</div>
                         <div class="description">Monitors All Arrive</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot monitor-schedule" hidden>
                         <div class="time">7:00 PM</div>
                         <div class="description">Monitor Shift 1 Start</div>
                     </div>
@@ -127,11 +127,11 @@
                         <div class="time">8:00 PM</div>
                         <div class="description">Gropers Arrive</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot monitor-schedule" hidden>
                         <div class="time">8:30 PM</div>
                         <div class="description">Monitor Shift 2 Start</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot monitor-schedule" hidden>
                         <div class="time">9:00 PM</div>
                         <div class="description">Monitor Shift 1 Ends</div>
                     </div>
@@ -143,6 +143,11 @@
                         <div class="time">10:30 PM</div>
                         <div class="description">All Done, start Teardown</div>
                     </div>
+                </div>
+                <div class="schedule-toggle-container">
+                    <button class="schedule-toggle" type="button" aria-expanded="false" aria-controls="event-schedule">
+                        Show Monitoring Schedule
+                    </button>
                 </div>
             </section>
 
@@ -156,5 +161,22 @@
             </section>
         </main>
     </div>
+    <script>
+        const scheduleToggle = document.querySelector('.schedule-toggle');
+        const monitorScheduleItems = document.querySelectorAll('.monitor-schedule');
+
+        scheduleToggle.addEventListener('click', () => {
+            const isExpanded = scheduleToggle.getAttribute('aria-expanded') === 'true';
+
+            monitorScheduleItems.forEach((item) => {
+                item.hidden = isExpanded;
+            });
+
+            scheduleToggle.setAttribute('aria-expanded', String(!isExpanded));
+            scheduleToggle.textContent = isExpanded
+                ? 'Show Monitoring Schedule'
+                : 'Hide Monitoring Schedule';
+        });
+    </script>
 </body>
 </html>

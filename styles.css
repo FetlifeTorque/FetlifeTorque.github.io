@@ -306,11 +306,38 @@ li {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
+.time-slot[hidden] {
+    display: none;
+}
+
 .time-slot .time {
     font-weight: 600;
     color: var(--accent-color);
     text-align: right;
     padding-right: var(--spacing-md);
+}
+
+.schedule-toggle-container {
+    text-align: center;
+}
+
+.schedule-toggle {
+    padding: 0.4rem 0.75rem;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.schedule-toggle:hover,
+.schedule-toggle:focus-visible {
+    color: white;
+    border-color: var(--accent-color);
+    background: rgba(196, 18, 48, 0.15);
 }
 
 .note {
