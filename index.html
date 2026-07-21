@@ -103,11 +103,11 @@
                         <div class="time">6:00 PM</div>
                         <div class="description">Setup</div>
                     </div>
-                    <div class="time-slot monitor-schedule" hidden>
+                    <div class="time-slot monitor-schedule" style="display: none;">
                         <div class="time">7:00 PM</div>
                         <div class="description">Monitors All Arrive</div>
                     </div>
-                    <div class="time-slot monitor-schedule" hidden>
+                    <div class="time-slot monitor-schedule" style="display: none;">
                         <div class="time">7:00 PM</div>
                         <div class="description">Monitor Shift 1 Start</div>
                     </div>
@@ -127,11 +127,11 @@
                         <div class="time">8:00 PM</div>
                         <div class="description">Gropers Arrive</div>
                     </div>
-                    <div class="time-slot monitor-schedule" hidden>
+                    <div class="time-slot monitor-schedule" style="display: none;">
                         <div class="time">8:30 PM</div>
                         <div class="description">Monitor Shift 2 Start</div>
                     </div>
-                    <div class="time-slot monitor-schedule" hidden>
+                    <div class="time-slot monitor-schedule" style="display: none;">
                         <div class="time">9:00 PM</div>
                         <div class="description">Monitor Shift 1 Ends</div>
                     </div>
@@ -143,11 +143,12 @@
                         <div class="time">10:30 PM</div>
                         <div class="description">All Done, start Teardown</div>
                     </div>
-                </div>
-                <div class="schedule-toggle-container">
-                    <button class="schedule-toggle" type="button" aria-expanded="false" aria-controls="event-schedule">
-                        Show Monitoring Schedule
-                    </button>
+                    <div style="text-align: center;">
+                        <button class="schedule-toggle" type="button" aria-expanded="false" aria-controls="event-schedule"
+                            style="padding: 0.4rem 0.75rem; font-size: 0.85rem; cursor: pointer;">
+                            Show Monitoring Schedule
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -169,7 +170,7 @@
             const isExpanded = scheduleToggle.getAttribute('aria-expanded') === 'true';
 
             monitorScheduleItems.forEach((item) => {
-                item.hidden = isExpanded;
+                item.style.display = isExpanded ? 'none' : 'grid';
             });
 
             scheduleToggle.setAttribute('aria-expanded', String(!isExpanded));
