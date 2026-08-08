@@ -358,6 +358,21 @@ a:hover {
     color: #ff1a1a;
 }
 
+/* Smaller typography for desktop screens */
+@media (min-width: 769px) {
+    body { font-size: 12px; }
+    h1 { font-size: 1.65rem; }
+    h2,
+    .hero h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.05rem; }
+    h4 { font-size: 0.9rem; }
+    .hero-content,
+    .highlight { font-size: 0.825rem; }
+    .nav-button { font-size: 0.75rem; }
+    .note { font-size: 0.7125rem; }
+    .schedule-toggle { font-size: 0.6375rem; }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     /* Typography */
