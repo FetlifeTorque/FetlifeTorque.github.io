@@ -27,12 +27,44 @@ const turndown = new TurndownService({
   bulletListMarker: "*"
 });
 
-turndown.addRule("timeSlot", {
-  filter: (node) => node.classList && node.classList.contains("time-slot"),
+turndown.addRule("scheduleTable", {
+  filter: "table",
   replacement: (_content, node) => {
-    const time = (node.querySelector(".time") || {}).textContent || "";
-    const description = (node.querySelector(".description") || {}).textContent || "";
-    return `* **${time.trim()}** — ${description.trim()}\n`;
+    const rows = Array.from(node.querySelectorAll("tr")).map((row) => {
+      const cells = [];
+      row.querySelectorAll("th, td").forEach((cell) => {
+        const items = Array.from(cell.querySelectorAll(".schedule-item"))
+          .map((item) => item.textContent.replace(/\s+/g, " ").trim())
+          .filter(Boolean);
+        const text = (items.length ? items.join("; ") : cell.textContent.replace(/\s+/g, " ").trim())
+          .replace(/\|/g, "\\|");
+        const span = parseInt(cell.getAttribute("colspan") || "1", 10);
+        for (let i = 0; i < span; i += 1) {
+          cells.push(text);
+        }
+      });
+      return cells;
+    });
+
+    if (!rows.length) {
+      return "";
+    }
+
+    const header = rows[0];
+    const divider = header.map(() => "---");
+    const body = rows.slice(1).map((row) => {
+      const padded = row.slice();
+      while (padded.length < header.length) {
+        padded.unshift("");
+      }
+      return padded;
+    });
+    const lines = [
+      `| ${header.join(" | ")} |`,
+      `| ${divider.join(" | ")} |`,
+      ...body.map((row) => `| ${row.join(" | ")} |`)
+    ];
+    return `\n${lines.join("\n")}\n\n`;
   }
 });
 
@@ -49,14 +81,6 @@ function rewriteLocalLinks(document) {
 
 function collectContent(window) {
   const document = window.document;
-  document.querySelectorAll(".schedule-toggle").forEach((element) => {
-    const wrapper = element.parentElement;
-    if (wrapper && wrapper.children.length === 1) {
-      wrapper.remove();
-    } else {
-      element.remove();
-    }
-  });
   document.querySelectorAll("nav, script, .banner").forEach((element) => {
     element.remove();
   });
@@ -98,7 +122,7 @@ function generatePage(page) {
   window.GENERATE_MARKDOWN = true;
   window.eval(eventJs);
   window.eval(applyJs);
-  window.applyEvent({ revealMonitorSchedule: true });
+  window.applyEvent();
 
   const content = collectContent(window);
   const markdown = [

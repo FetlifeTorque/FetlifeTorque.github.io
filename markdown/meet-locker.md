@@ -81,7 +81,7 @@ A: No. One monitor for one piece of Meet.
 
 #### Q: But the scenes are \*really\* safe.
 
-A: We understand, but this is the first time we are trying this at Thornwood and we want to err on the side of safety. It's a slippery slope which we don't want to start down.
+A: We understand, but this is the first time we are trying this at Surrender and we want to err on the side of safety. It's a slippery slope which we don't want to start down.
 
 #### Q: We're going to have the Groper negotiate with the Meet directly, and they have agreed to follow safewords, etc. Can I leave them to it?
 

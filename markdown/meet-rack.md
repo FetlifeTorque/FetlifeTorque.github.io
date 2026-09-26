@@ -34,7 +34,7 @@ The rules for the gropers are simple.
 
 ### When / Where
 
-Congratulations! This should be a lot of fun. Come to the main dungeon at 7:30 PM to go up on the Rack. (7:15 PM for those with accessibility needs.)
+Congratulations! This should be a lot of fun. Come to the Main dungeon at 7:30 PM to go up on the Rack. (7:15 PM for those with accessibility needs.)
 
 As you are deciding to go on the Rack, please consider your ability to hold boundaries with strangers. This event aims to be a safe and positive experience for everybody and while the Monitors are there for your safety, it's your responsibility to escalate any discomfort to the Monitors in the first place.
 

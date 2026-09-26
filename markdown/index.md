@@ -2,7 +2,7 @@
 
 # The Heat of the Meet is back!
 
-At this year's Dark Odyssey: Thornwood, the Meet Rack returns along with the Meet Locker!
+At this year's Dark Odyssey: Surrender, the Meet Rack returns along with the Meet Locker!
 
 Two styles of objectification at the same time on Saturday night.
 
@@ -52,18 +52,21 @@ The Meet Rack relies on volunteer monitors to help us keep things flowing smooth
 
 * * *
 
-## Event Schedule - Saturday Night at Thornwood 2026
+## Event Schedule - Saturday Night at Surrender 2026
 
-* **6:00 PM** — Setup
-* **7:00 PM** — Monitors All Arrive
-* **7:00 PM** — Monitor Shift 1 Start
-* **7:15 PM** — Those with accessibility needs
-* **7:15 PM** — Going on the Locker
-* **7:30 PM** — Going on the Rack
-* **8:00 PM** — Gropers Arrive
-* **8:30 PM** — Monitor Shift 2 Start
-* **9:00 PM** — Monitor Shift 1 Ends
-* **9:15 PM** — Locker Shift 2
-* **10:30 PM** — All Done, start Teardown
+| Time | Event | Monitors | Setup/Teardown |
+| --- | --- | --- | --- |
+| 12:00 PM |  | Monitor Lunch Meeting |  |
+| 6:00 PM |  |  | Setup |
+| 6:30 PM |  |  |  |
+| 7:00 PM | 7:15 PM — Those with accessibility needs7:15 PM — Going on the Locker | Monitors All ArriveMonitor Shift 1 Start | Setup crew window |
+| 7:30 PM | Going on the Rack |  |  |
+| 8:00 PM | Gropers Arrive |  |  |
+| 8:30 PM |  | Monitor Shift 2 Start |  |
+| 9:00 PM | 9:15 PM — Locker Shift 1 Ends9:15 PM — Locker Shift 2 | Monitor Shift 1 Ends |  |
+| 9:30 PM |  |  |  |
+| 10:00 PM |  |  |  |
+| 10:30 PM |  |  | All Done, start Teardown |
+| 11:00 PM |  |  |  |
 
-## To learn and talk about the Meet Rack with other attendees, join the Thornwood Discord server and follow the [Meet Rack Channel](https://discord.com/channels/1367654730956017674/1508513681837789375)
+## To learn and talk about the Meet Rack with other attendees, join the Surrender Discord server and follow the [Meet Rack Channel](https://discord.com/channels/1367654730956017674/1508513681837789375)
