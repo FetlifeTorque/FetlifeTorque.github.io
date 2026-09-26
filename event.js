@@ -12,7 +12,7 @@ window.EVENT = {
 
   discord: {
     serverName: "Surrender Discord",
-    channelUrl:https://discord.com/channels/1152407329749344278/1553528328600821841
+    channelUrl: "https://discord.com/channels/1152407329749344278/1553528328600821841",
     channelName: "Meet Rack Channel"
   },
 

@@ -239,9 +239,12 @@
   window.applyEvent = applyEvent;
   window.getEventValue = getEventValue;
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", applyEvent);
-  } else {
+  function start() {
     applyEvent();
+  }
+
+  document.addEventListener("DOMContentLoaded", start);
+  if (document.readyState !== "loading") {
+    start();
   }
 })();
