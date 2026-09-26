@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor Guide - Meet Rack</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="event.js" defer></script>
+    <script src="apply-event.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -33,12 +35,12 @@
 
                     <div class="info-card">
                         <h3>When/where do I need to be?</h3>
-                        <p>Saturday lunch: We will have an All Monitor lunch meeting Saturday at one of the tables outside.  Please plan to attend.</p>
-                        <p>Shift 1: Saturday, 7:00pm-9:00pm</p>
-                        <p>Shift 2: Saturday, 8:30pm-10:30pm</p>
+                        <p><span data-event="times.lunchMeeting">Saturday lunch</span>: We will have an All Monitor lunch meeting <span data-event="day">Saturday</span> at one of the tables outside.  Please plan to attend.</p>
+                        <p>Shift 1: <span data-event="day">Saturday</span>, <span data-event="times.monitorShift1Start">7:00 PM</span>–<span data-event="times.monitorShift1End">9:00 PM</span></p>
+                        <p>Shift 2: <span data-event="day">Saturday</span>, <span data-event="times.monitorShift2Start">8:30 PM</span>–<span data-event="times.teardown">10:30 PM</span></p>
                         <p>The event is most chaotic at the beginning, so it is important to be on 
                             time.</p>
-                        <p>We need all monitors, including shift 2 monitors, to arrive at 7:00pm
+                        <p>We need all monitors, including shift 2 monitors, to arrive at <span data-event="times.monitorsArrive">7:00 PM</span>
                             so we can figure out who is doing what.</p>
                         <p>Yes, there is a half-hour overlap in the monitor shifts to have a smooth hand-over.</p>
                     </div>

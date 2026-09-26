@@ -317,6 +317,25 @@ li {
     padding-right: var(--spacing-md);
 }
 
+.time-slot.monitor-schedule {
+    grid-template-columns: 1fr 120px;
+    border-left: none;
+    border-right: 3px solid var(--accent-color);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.time-slot.monitor-schedule .time {
+    text-align: left;
+    padding-right: 0;
+    padding-left: var(--spacing-md);
+    order: 2;
+}
+
+.time-slot.monitor-schedule .description {
+    text-align: right;
+    order: 1;
+}
+
 .schedule-toggle-container {
     text-align: center;
 }
@@ -454,6 +473,18 @@ a:hover {
     .time-slot .time {
         text-align: left;
         padding-right: 0;
+    }
+
+    .time-slot.monitor-schedule {
+        grid-template-columns: 1fr;
+        border-right: 3px solid var(--accent-color);
+    }
+
+    .time-slot.monitor-schedule .time,
+    .time-slot.monitor-schedule .description {
+        text-align: right;
+        padding-left: 0;
+        order: 0;
     }
     
     /* Content spacing */
