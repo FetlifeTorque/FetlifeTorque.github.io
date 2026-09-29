@@ -4,7 +4,7 @@ window.EVENT = {
   fullName: "Dark Odyssey: Surrender",
   day: "Saturday",
   heroTagline: "The Meet Rack:",
-  heroTaglineAccent: "Come Hungry",
+  heroTaglineAccent: "Come Hungry!",
   siteUrl: "https://meet-rack.com",
 
   venue: {

@@ -8,7 +8,7 @@ The Meet Locker gives you that chance to offer anything you wish. Bring a monito
 
 ## What is the Locker?
 
-Put simply: **IF YOU BRING YOUR OWN MONITOR WITH YOU, then you are free to have any sort of interactions with the gropers that you wish to offer.**
+Put simply: **YOU BRING YOUR OWN MONITOR WITH YOU, and then you are free to have any sort of interactions with the gropers that you wish to offer.**
 
 We will create a distinct space for the Locker so there is no confusion between the Locker and the Rack. If you are in the Locker, you must have your monitor with you at all times.
 
@@ -20,7 +20,7 @@ Shift 1 is from 8:00 PM to 9:15 PM (And doors will open at 7:15 PM for the first
 
 Shift 2 is from 9:15 PM to the end at 10:30 PM.
 
-Given that we don't know how many people will want to go on the locker we're not sure we need to do this. If there aren't people for the 2nd shift the 1st shift people can stay.
+Given that we don't know how many people will want to go on the locker we're not sure we need to do this. We will manage it on the fly.
 
 There is no sign-up sheet for the Locker. However we will probably have a first-come first-served queue of some kind. It's a work in progress.
 
@@ -28,7 +28,7 @@ There is no sign-up sheet for the Locker. However we will probably have a first-
 
 Remember, You are responsible for your safety. You are responsible for choosing your monitor and negotiating what you're offering. You are responsible for holding your boundaries. If you have proxied that to your monitor, then that's still your responsibility.
 
-With The Meet Locker we are expecting some more extreme scenes, especially involving CNC and/or sexual use. Remember that at the end of the day You are responsible for your own safety. Even if you have a Monitor watching over you, they can make mistakes, misjudge a situation, etc. And the end of the day you can yell \*Safeword\*. Don't forget it!
+With The Meet Locker we are expecting some more extreme scenes, especially involving CNC and/or sexual use. Remember that YOU are responsible for your own safety. Even if you have a Monitor watching over you, they can make mistakes, misjudge a situation, etc.
 
 ## What are the Rules?
 
@@ -81,7 +81,7 @@ A: No. One monitor for one piece of Meet.
 
 #### Q: But the scenes are \*really\* safe.
 
-A: We understand, but this is the first time we are trying this at Surrender and we want to err on the side of safety. It's a slippery slope which we don't want to start down.
+A: We understand, but we are going to err on the side of safety, consistency, and ease of conveying the rules. It's a slippery slope which we don't want to explore.
 
 #### Q: We're going to have the Groper negotiate with the Meet directly, and they have agreed to follow safewords, etc. Can I leave them to it?
 

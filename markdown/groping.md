@@ -1,10 +1,8 @@
 <!-- Generated from groping.html. Do not edit. Run npm run generate-markdown -->
 
-# I want to grope the Meat
+# Groping the Meat
 
-Great! Show up at 8:00 PM to get your grope on!
-
-These are the rules you must be aware of. **Read this list in its entirety.**
+## **Read these rules in its entirety.**
 
 ## Rules About Respecting Boundaries
 
@@ -57,10 +55,10 @@ Obey the Monitors at all times! Period! Monitors are there to ensure safety and 
 
 The people on the rack are there to be objectified. Feel free to talk, or not, treat them as a toy to be played with, or a person to meet, etc. Remember this isn't the place for full-on play scenes, massive negotiations, long deep discussions, ass pats that turn into spankings, etc. If you're with the same person for more than a few minutes, give them your card and move on.
 
-**New -** It is acceptable to visit the same person twice over the course of the Rack, but if you're trying to see the same person more than that, it feels a little stalkeresque. Give them your card and move on.
+**New -** It is acceptable to visit the same person twice over the course of the Rack, but if you're trying to see the same person more than that, it feels a little stalkeresque. Give them your card if they have a cup and move on.
 
 ## Future Connections
 
-The Meet Rack is NOT the place to plan future play dates, to negotiate, to have conversations, etc. It's a place for brief objectification and people on the rack are perhaps NOT in the right frame of mind to negotiate as equals. If you wish to connect later with someone, drop your calling card in their cup for follow-up.
+The Meet Rack is NOT the place to plan future play dates, to negotiate, to have conversations, etc. It's a place for brief objectification. People on the rack are NOT in the right frame of mind to negotiate as equals. If you wish to connect later with someone, drop your calling card in their cup for follow-up.
 
 ## Read about [Speed Meeting](https://meet-rack.com/speed-meeting.html) for more information.

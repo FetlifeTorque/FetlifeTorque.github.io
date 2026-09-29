@@ -24,7 +24,7 @@ There is risk of miscommunication between your monitor and the gropers (Or even 
 
 Remember this isn't something we are going to police or get involved in. Think of it as the same as if you'd met at a local play party.
 
-## Groping is has risks.
+## Groping also has risks.
 
 Don't be the person who breaks the rules, pushes it too far, didn't read, etc. By taking part you understand that you may make a mistake. You may misread someone's intent or not understand the rules.
 
@@ -32,6 +32,8 @@ If that happens, and you have created a problem, **Own it. Apologize.**
 
 Understand that the monitors are there to help and protect everyone. Work with them to resolve whatever the situation is. A sincere apology for a real mistake goes a long way towards earning respect and not screwing up someone else's experience.
 
-## Assumed risk
+## This is a non-Vetted event.
 
-Dark Odyssey is an event open to the public, which means the gropers at the Meet Rack have a wide variety of experience and knowledge. We have many layers of protection in place, but you cannot assume that the person groping you is versed in community standards and norms. The first bad touch might happen before a monitor is able to intervene. You MUST be able to advocate for yourself in these situations.
+Dark Odyssey is an event open to the public, which means the gropers and participants at the Meet Rack have a wide variety of experience and knowledge. We have many layers of protection in place, but you cannot assume that the person groping you is versed in community standards and norms. The first bad touch might happen before a monitor is able to intervene.
+
+You MUST be able to advocate for yourself in these situations.

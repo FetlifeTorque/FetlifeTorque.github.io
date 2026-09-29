@@ -20,7 +20,7 @@ You are effectively the DM for your section of the Rack (10-20 people). You will
 
 Shift 1: Saturday, 7:00 PM–9:00 PM
 
-Shift 2: Saturday, 8:30 PM–10:30 PM
+Shift 2: Saturday, 9:00 PM–10:30 PM
 
 The event is most chaotic at the beginning, so it is important to be on time.
 
@@ -71,6 +71,7 @@ Yes, there is a half-hour overlap in the monitor shifts to have a smooth hand-ov
 *   Anytime a person on the Rack calls or signals (Finger Horns)
 *   Anytime you see play happening that shouldn't be happening
 *   Anytime soneone yells "Safeword"
+*   If you see someone flashing "Devil Horns" with their hands
 *   Check-in if you see someone on the Rack distressed, crying, angry, etc.
 
 ### When to Escalate to Hosts and/or DM's
@@ -89,7 +90,7 @@ Yes, there is a half-hour overlap in the monitor shifts to have a smooth hand-ov
 2.  Identify and keep track of the Groper or ask for help tracking them.
 3.  Get assistance immediately. Do one or all of:
     *   Call for help from nearby monitors
-    *   Contact @Torque
+    *   Contact @Torque or @Melee
     *   Call for DMs
     *   Ask bystander or two to fetch help
 4.  Check-in with the nearby people on the Rack to make sure everyone is ok.
