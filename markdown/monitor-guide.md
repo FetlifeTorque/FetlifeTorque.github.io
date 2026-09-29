@@ -16,7 +16,7 @@ You are effectively the DM for your section of the Rack (10-20 people). You will
 
 ### When/where do I need to be?
 
-Saturday lunch: We will have an All Monitor lunch meeting Saturday at one of the tables outside. Please plan to attend.
+12:00 (noon): We will have an All Monitor lunch meeting Saturday at one of the tables outside. Please plan to attend.
 
 Shift 1: Saturday, 7:00 PM–9:00 PM
 

@@ -1,442 +1,912 @@
-/* Base styles */
+/* ==========================================================================
+   Meet Rack - design tokens
+   ========================================================================== */
 :root {
-    --primary-color: #ffffff;
-    --secondary-color: #cccccc;
-    --text-color: #ffffff;
-    --background-color: #000000;
-    --card-background: rgba(0, 0, 0, 0.85);
-    --accent-color: #c41230;
-    --border-color: #333333;
-    --spacing-sm: 0.35rem;
-    --spacing-md: 0.7rem;
-    --spacing-lg: 1.05rem;
-    --spacing-xl: 1.4rem;
-    --border-radius: 3px;
-    --box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    /* Surfaces: warm near-blacks rather than pure #000 */
+    --ink-900: #0b0a0c;
+    --ink-800: #131015;
+    --ink-700: #1a161c;
+    --ink-600: #241e26;
+
+    /* Accents: oxblood through dusty rose, with brass for quieter emphasis */
+    --wine-900: #40101f;
+    --wine-800: #5d1629;
+    --wine-700: #7c1e37;
+    --wine-600: #99274a;
+    --fire-red: #f81c22;
+    --rose-400: #d98fa0;
+    --rose-300: #eab6c1;
+    --brass: #c9a86a;
+    --sage: #9ec08a;
+    --amber: #d8a657;
+
+    /* Text */
+    --text: #ece6e5;
+    --text-muted: #b6aaad;
+    --text-dim: #8a8085;
+    --on-accent: #fff5f6;
+
+    /* Lines */
+    --line: rgba(255, 255, 255, 0.09);
+    --line-strong: rgba(255, 255, 255, 0.18);
+
+    /* Rhythm */
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3.25rem;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 30px -12px rgba(0, 0, 0, 0.8);
+    --shadow-lg: 0 24px 60px -24px rgba(0, 0, 0, 0.9);
+
+    /* Content column: about 70% of the window, floored so small screens stay
+       near full width and ceilinged so huge monitors don't get 200-character
+       lines. The home page overrides both of these below. */
+    --content-max: min(max(70%, 60rem), 100rem);
+    --measure: none;
+    --gutter: clamp(1rem, 4vw, 2rem);
+
+    --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino,
+        "Book Antiqua", Georgia, serif;
 }
 
-/* Banner */
-.banner {
-    width: 100%;
-    height: 200px;
-    max-height: 200px !important;
-    overflow: hidden;
-    position: relative;
-    background: var(--dark-background);
-    line-height: 0;
+/* The home page is a card grid and a five-column schedule, both tuned to a
+   fixed column, so it keeps the narrower width and caps its own line length. */
+body.home {
+    --content-max: 70rem;
+    --measure: 78ch;
 }
 
-.banner img {
-    width: 100%;
-    height: 200px;
-    max-height: 200px !important;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0;
-    padding: 0;
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-/* Typography */
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    line-height: 1.7;
-    color: var(--text-color);
     margin: 0;
-    padding: 0;
-    font-size: 16px;
-    background: url('images/meet_rack_centered.png') no-repeat center center fixed;
-    background-size: cover;
+    font-family: var(--font-body);
+    font-size: clamp(15.5px, 0.92rem + 0.18vw, 17.5px);
+    line-height: 1.65;
+    color: var(--text);
+    background-color: var(--ink-900);
     min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Page Layout */
+/* The banner art becomes atmosphere, not competition for the copy. */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+body::before {
+    background: url("images/meet_rack_centered.png") center / cover no-repeat;
+    filter: saturate(0.5) brightness(0.38) blur(2px);
+    opacity: 0.55;
+    z-index: -2;
+}
+
+body::after {
+    background:
+        radial-gradient(90rem 60rem at 50% -10%, rgba(124, 30, 55, 0.28), transparent 60%),
+        linear-gradient(180deg, rgba(11, 10, 12, 0.72) 0%, rgba(11, 10, 12, 0.94) 55%, var(--ink-900) 100%);
+    z-index: -1;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--wine-700);
+    color: var(--on-accent);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+    outline: 2px solid var(--rose-300);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
 .container {
-    width: 100%;
-    min-height: 100vh;
-    background: var(--card-background);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Content Alignment */
-.content-section {
-    width: 80%;
-    max-width: 1080px;
-    margin: var(--spacing-lg) auto;
-    padding: 0 var(--spacing-md);
+/* Full-bleed bars keep their own edge but align content to the page grid. */
+header,
+.top-nav,
+.bottom-nav {
+    padding-inline: max(var(--gutter), (100% - var(--content-max)) / 2);
+}
+
+main {
+    flex: 1;
+    width: min(100% - (var(--gutter) * 2), var(--content-max));
+    margin-inline: auto;
+    padding-block: clamp(1.75rem, 4vw, 3rem);
+}
+
+main > *:first-child {
+    margin-top: 0;
+}
+
+section,
+.content-section,
+.content-container {
+    width: 100%;
+    margin-block: var(--space-xl);
+}
+
+section:first-child {
+    margin-top: 0;
+}
+
+/* Deep links have to clear the sticky nav. */
+:target {
+    scroll-margin-top: 5rem;
 }
 
 .centered {
     text-align: center;
 }
 
-/* Content Width Control */
-.content-container {
-    width: 80%;
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-main {
-    padding: var(--spacing-lg);
-}
-
-main,
-header h1,
-.hero,
-section,
-.info-box,
-.style-box,
-.warning {
-    width: 80%;
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Text styles */
-.highlight-text {
-    font-size: 120%;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
-.accent-text {
-    color: var(--accent-color);
-}
-
-.rule-emphasis {
-    color: var(--accent-color);
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
     font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 var(--space-md);
+    text-wrap: balance;
 }
 
-.rule-emphasis-green {
-    color: #00b300;
-    font-weight: 600;
+h1 {
+    font-size: clamp(1.95rem, 1.35rem + 2.4vw, 3.1rem);
 }
 
-h1, h2, h3, h4 {
-    font-family: "Droid Sans", Arial, sans-serif;
-    font-weight: 500;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.4;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+h2 {
+    font-size: clamp(1.35rem, 1.1rem + 1.1vw, 1.95rem);
+    margin-top: var(--space-xl);
 }
 
-h1 { 
-    font-size: 2.2rem; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-color);
-}
-
-h2 { 
-    font-size: 1.8rem;
-    color: var(--accent-color);
-}
-
-h3 { 
-    font-size: 1.4rem;
-    color: var(--accent-color);
+h3 {
+    font-size: clamp(1.1rem, 1rem + 0.45vw, 1.3rem);
+    color: var(--rose-300);
 }
 
 h4 {
-    font-size: 1.2rem;
-    color: var(--accent-color);
+    font-size: 1.05rem;
+    color: var(--rose-300);
 }
 
-/* Header */
+/* A thin accent rule reads as structure without shouting in red. */
+h2 {
+    position: relative;
+    padding-left: 0.95rem;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.22em;
+    bottom: 0.22em;
+    width: 3px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(180deg, var(--wine-600), var(--rose-400));
+}
+
+/* Inside a card the panel edge already does that job, and a centered
+   heading gets a hairline underneath instead. */
+:is(.info-box, .style-box, .info-card, .responsibility-card, .escalation-box,
+    .important-box, .qualities-list, .skills) h2,
+:is(h2.centered, .centered h2) {
+    padding-left: 0;
+}
+
+:is(.info-box, .style-box, .info-card, .responsibility-card, .escalation-box,
+    .important-box, .qualities-list, .skills) h2::before,
+:is(h2.centered, .centered h2)::before {
+    content: none;
+}
+
+:is(h2.centered, .centered h2)::after {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 2px;
+    margin: var(--space-sm) auto 0;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, transparent, var(--wine-600), transparent);
+}
+
+p {
+    margin: 0 0 var(--space-md);
+    max-width: var(--measure);
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.highlight-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--rose-300);
+}
+
+.accent-text {
+    color: var(--rose-300);
+    font-weight: 600;
+}
+
+.rule-emphasis {
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.rule-emphasis-green {
+    color: var(--sage);
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--rose-300);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: var(--space-md) 0;
+}
+
+.note {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    font-style: italic;
+    border-left: 2px solid var(--line-strong);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+ul,
+ol {
+    margin: 0 0 var(--space-md);
+    padding-left: 1.35rem;
+    max-width: var(--measure);
+}
+
+li {
+    margin-bottom: var(--space-xs);
+}
+
+li::marker {
+    color: var(--wine-600);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    margin: var(--space-xl) 0;
+    background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+a {
+    color: var(--rose-400);
+    text-decoration: none;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgba(217, 143, 160, 0.4);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+    color: var(--rose-300);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+}
+
+/* The pages wrap some links in <u> for emphasis; let the link style lead. */
+u a,
+a u {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Header and hero
+   ========================================================================== */
 header {
     text-align: center;
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-lg) 0;
-    background: rgba(0, 0, 0, 0.7);
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
+    background: linear-gradient(180deg, rgba(26, 22, 28, 0.85), rgba(11, 10, 12, 0.35));
+    border-bottom: 1px solid var(--line);
 }
 
 header h1 {
-    width: 80%;
-    max-width: 1080px;
-    margin: 0 auto;
+    max-width: 34ch;
+    margin-inline: auto;
 }
 
-/* Hero section */
+header .subtitle {
+    margin-top: calc(var(--space-xs) * -1);
+}
+
 .hero {
+    /* Reaches past the content column when the viewport can spare the room. */
+    --bleed: min(3rem, max(0rem, (100vw - var(--content-max) - 2rem) / 2));
+    width: calc(100% + var(--bleed) * 2);
+    margin: 0 calc(var(--bleed) * -1) var(--space-lg);
     text-align: center;
-    padding: var(--spacing-xl);
-    margin-bottom: var(--spacing-lg);
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(60rem 22rem at 50% -40%, rgba(153, 39, 74, 0.3), transparent 70%),
+        linear-gradient(180deg, rgba(36, 30, 38, 0.82), rgba(19, 16, 21, 0.82));
+    box-shadow: var(--shadow-md);
 }
 
 .hero.compact {
-    padding: var(--spacing-lg);
+    padding-block: clamp(1rem, 2.2vw, 1.6rem);
+    padding-inline: clamp(1.25rem, 3vw, 2rem);
 }
 
+.hero h1,
 .hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.hero-accent {
+    color: var(--fire-red);
+    font-style: italic;
+    white-space: nowrap;
 }
 
 .hero-content {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--secondary-color);
+    max-width: 88ch;
+    margin-inline: auto;
+    color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
-/* Navigation and Buttons */
+.hero-content p {
+    max-width: none;
+    margin-bottom: var(--space-xs);
+}
+
+.hero-content p:last-child,
+.hero-content .highlight {
+    margin-bottom: 0;
+}
+
+.hero-content .highlight {
+    margin-top: var(--space-sm);
+}
+
+/* ==========================================================================
+   Navigation and buttons
+   ========================================================================== */
 .nav-button {
-    display: inline-block;
-    padding: 0.6rem 1rem;
-    background-color: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.3rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, var(--wine-600), var(--wine-800));
+    color: var(--on-accent);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     font-weight: 600;
-    font-size: 1rem;
-    min-width: 100px;
+    line-height: 1.25;
     text-align: center;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+        border-color 0.18s ease, color 0.18s ease;
 }
 
 .nav-button:hover {
-    background-color: #a30d26;
-    color: white;
+    background: linear-gradient(180deg, var(--wine-600), var(--wine-700));
+    border-color: rgba(234, 182, 193, 0.35);
+    color: var(--on-accent);
     text-decoration: none;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Wayfinding links stay quiet so in-page calls to action can lead. */
+.top-nav,
+.bottom-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs) var(--space-sm);
+}
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding-block: 0.6rem;
+    background: rgba(13, 11, 15, 0.82);
+    backdrop-filter: blur(14px) saturate(130%);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    border-bottom: 1px solid var(--line);
+}
+
+.bottom-nav {
+    justify-content: center;
+    margin-top: auto;
+    padding-block: clamp(1.25rem, 3vw, 2rem);
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(11, 10, 12, 0), rgba(11, 10, 12, 0.7));
+}
+
+.bottom-nav .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs) var(--space-sm);
+}
+
+.top-nav .nav-button,
+.bottom-nav .nav-button {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--line-strong);
+    color: var(--text-muted);
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.top-nav .nav-button:hover,
+.bottom-nav .nav-button:hover {
+    background: rgba(153, 39, 74, 0.22);
+    border-color: rgba(234, 182, 193, 0.4);
+    color: var(--text);
 }
 
 .button-tier {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: var(--space-sm);
     justify-content: center;
-    margin-bottom: var(--spacing-lg);
+    margin-top: var(--space-lg);
 }
 
 .button-center {
     display: flex;
     justify-content: center;
-    margin: var(--spacing-lg) 0;
+    margin: var(--space-md) 0 0;
 }
 
-/* Content boxes */
-.info-box, .style-box, .key-point {
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-md);
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(5px);
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+.info-box,
+.style-box,
+.info-card,
+.responsibility-card,
+.escalation-box,
+.important-box,
+.qualities-list,
+.skills {
+    /* Grid containers reset this; cards in normal flow keep it. */
+    margin-block: var(--space-lg);
+    padding: clamp(1rem, 2.2vw, 1.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: linear-gradient(180deg, rgba(36, 30, 38, 0.72), rgba(19, 16, 21, 0.78));
+    box-shadow: var(--shadow-md);
 }
 
-.info-box header, .style-box header {
-    display: grid;
-    grid-template-columns: minmax(200px, 1fr) 200px;
+.info-box > *:last-child,
+.style-box > *:last-child,
+.info-card > *:last-child,
+.responsibility-card > *:last-child,
+.escalation-box > *:last-child,
+.important-box > *:last-child,
+.qualities-list > *:last-child,
+.skills > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Card headers: title left, action right, stacking cleanly when narrow. */
+.info-box > header,
+.style-box > header {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+    justify-content: space-between;
+    gap: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+    padding: 0;
+    background: none;
+    border: 0;
+    text-align: left;
 }
 
-.info-box header h3, .style-box header h3 {
+.info-box > header h3,
+.style-box > header h3 {
+    flex: 1 1 12rem;
     margin: 0;
 }
 
-.info-box header .button-center, .style-box header .button-center {
+.info-box > header .button-center,
+.style-box > header .button-center {
     margin: 0;
-    justify-self: end;
+    flex: 0 0 auto;
 }
 
-/* Ensure consistent button width */
-.button-center .nav-button {
-    width: 180px;
+/* The two headline options get a hint of their own colour. */
+.style-box.meet-rack {
+    border-color: rgba(153, 39, 74, 0.45);
+    background: linear-gradient(180deg, rgba(64, 16, 31, 0.55), rgba(19, 16, 21, 0.82));
 }
 
-.key-point {
-    background: rgba(196, 18, 48, 0.15);
-    border-left: 4px solid var(--accent-color);
+.style-box.meet-locker {
+    border-color: rgba(201, 168, 106, 0.32);
+    background: linear-gradient(180deg, rgba(58, 44, 26, 0.42), rgba(19, 16, 21, 0.82));
 }
 
-.highlight {
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: var(--spacing-md) 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+/* ==========================================================================
+   Callouts
+   ========================================================================== */
+.key-point,
+.warning,
+.warning-box,
+.important-note,
+.pro-tip {
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--wine-600);
+    background: rgba(153, 39, 74, 0.12);
 }
 
-/* Lists */
-ul, ol {
-    padding-left: 1.5rem;
-    margin: var(--spacing-md) 0;
-    color: var(--text-color);
+.key-point > *:last-child,
+.warning > *:last-child,
+.warning-box > *:last-child,
+.important-note > *:last-child,
+.pro-tip > *:last-child {
+    margin-bottom: 0;
 }
 
-li {
-    margin-bottom: 0.5rem;
+.pro-tip {
+    border-left-color: var(--brass);
+    background: rgba(201, 168, 106, 0.1);
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
-/* Schedule table */
+.pro-tip strong {
+    color: var(--brass);
+}
+
+.warning,
+.warning-box {
+    border-left-color: var(--amber);
+    background: rgba(216, 166, 87, 0.1);
+}
+
+.warning-box strong,
+.important-note strong {
+    color: var(--amber);
+}
+
+.important-box {
+    border: 1px solid rgba(153, 39, 74, 0.45);
+    background:
+        radial-gradient(40rem 16rem at 50% -60%, rgba(153, 39, 74, 0.3), transparent 70%),
+        linear-gradient(180deg, rgba(64, 16, 31, 0.5), rgba(19, 16, 21, 0.82));
+}
+
+.escalation-box h3 {
+    margin-top: var(--space-lg);
+}
+
+.escalation-box h3:first-child {
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+.info-grid,
+.responsibility-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    align-items: start;
+}
+
+/* Home page overview: gateway cards take a full row, the rest pair up. */
+.intro-overview {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+}
+
+/* Gaps already space these out. */
+:is(.intro-overview, .bundle, .bundle-stack, .info-grid, .responsibility-grid) > * {
+    margin: 0;
+}
+
+.intro-overview > .info-box:first-child,
+.intro-overview > .bundle {
+    grid-column: 1 / -1;
+}
+
+/* Rack, groping, and Locker are one decision, so frame them as a set. */
+.bundle {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    padding: var(--space-md);
+    border: 1px solid var(--line-strong);
+    border-radius: calc(var(--radius-md) + 6px);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.bundle-stack {
+    display: grid;
+    gap: var(--space-md);
+    align-content: start;
+}
+
+@media (max-width: 42rem) {
+    .intro-overview,
+    .bundle {
+        grid-template-columns: 1fr;
+    }
+
+    .bundle {
+        padding: var(--space-sm);
+    }
+}
+
+.qualities-list ul,
+.skills ul {
+    /* Width-based so the count follows the column instead of staying at two. */
+    columns: 18rem;
+    column-gap: var(--space-xl);
+    margin-bottom: 0;
+}
+
+.skills h3 {
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   Schedule table
+   ========================================================================== */
 .schedule-wrap {
     width: 100%;
-    max-width: none;
-    margin: var(--spacing-lg) 0;
+    margin: var(--space-lg) 0 0;
     overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: linear-gradient(180deg, rgba(36, 30, 38, 0.7), rgba(19, 16, 21, 0.8));
+    box-shadow: var(--shadow-md);
+    -webkit-overflow-scrolling: touch;
 }
 
 .schedule-table {
     width: 100%;
+    min-width: 40rem;
     border-collapse: collapse;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: var(--border-radius);
     table-layout: fixed;
+    font-size: 0.93rem;
 }
 
 .schedule-table th,
 .schedule-table td {
-    padding: 0.55rem 0.75rem;
-    border: 1px solid var(--border-color);
-    vertical-align: top;
+    padding: 0.7rem 0.9rem;
     text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
 }
 
 .schedule-table thead th {
-    background: rgba(196, 18, 48, 0.25);
-    color: var(--accent-color);
-    font-weight: 600;
-    text-align: center;
+    position: relative;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-300);
+    background: rgba(64, 16, 31, 0.55);
+    border-bottom: 1px solid var(--line-strong);
+    white-space: nowrap;
+}
+
+.schedule-table thead th:first-child,
+.schedule-table tbody th {
+    width: 7.5rem;
 }
 
 .schedule-table tbody th {
-    width: 6.5rem;
-    white-space: nowrap;
-    color: var(--accent-color);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
     font-weight: 600;
     text-align: right;
-    background: rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.schedule-table tbody tr:last-child th,
+.schedule-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Rows carrying nothing shouldn't draw the eye. */
+.schedule-table tbody tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.schedule-item {
+    position: relative;
+    padding-left: 0.85rem;
+    color: var(--text);
+}
+
+.schedule-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--wine-600);
 }
 
 .schedule-item + .schedule-item {
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
 }
 
 .schedule-span {
     text-align: center;
-    background: rgba(196, 18, 48, 0.12);
+    background: rgba(153, 39, 74, 0.14);
 }
 
-.note {
-    font-style: italic;
-    color: var(--secondary-color);
-    font-size: 0.95rem;
-    margin: var(--spacing-md) 0;
+.schedule-span .schedule-item {
+    padding-left: 0;
+    color: var(--rose-300);
+    font-weight: 600;
 }
 
-/* Links */
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
+.schedule-span .schedule-item::before {
+    display: none;
 }
 
-a:hover {
-    color: #ff1a1a;
-}
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 720px) {
+    .qualities-list ul,
+    .skills ul {
+        columns: 1;
+    }
 
-/* Smaller typography for desktop screens */
-@media (min-width: 769px) {
-    body { font-size: 12px; }
-    h1 { font-size: 1.65rem; }
-    h2,
-    .hero h2 { font-size: 1.35rem; }
-    h3 { font-size: 1.05rem; }
-    h4 { font-size: 0.9rem; }
-    .hero-content,
-    .highlight { font-size: 0.825rem; }
-    .nav-button { font-size: 0.75rem; }
-    .note { font-size: 0.7125rem; }
-}
+    .info-box > header,
+    .style-box > header {
+        align-items: stretch;
+    }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    /* Typography */
-    body { font-size: 18px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.6rem; }
-    h4 { font-size: 1.4rem; }
-    
-    /* Layout */
-    .container { 
+    .info-box > header .button-center,
+    .style-box > header .button-center,
+    .info-box > header .button-center .nav-button,
+    .style-box > header .button-center .nav-button {
         width: 100%;
-        min-width: 100%;
     }
-    main { 
-        padding: var(--spacing-md);
-        width: 100%;
-        max-width: none;
+
+    .button-tier .nav-button {
+        flex: 1 1 14rem;
     }
-    
-    /* Content width */
-    main,
-    header h1,
-    .hero,
-    section,
-    .info-box,
-    .style-box,
-    .warning {
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    /* Header and content boxes */
-    .info-box header,
-    .style-box header {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+
+    /* The grid has to scroll at this width, so say so. */
+    .timing::after {
+        content: "Swipe the schedule sideways to see every column.";
+        display: block;
+        margin-top: var(--space-xs);
+        font-size: 0.8rem;
+        color: var(--text-dim);
         text-align: center;
     }
-    
-    .info-box header .button-center,
-    .style-box header .button-center {
-        justify-self: center;
-        width: 100%;
-        margin-top: var(--spacing-sm);
+
+    .schedule-table {
+        min-width: 34rem;
+        font-size: 0.86rem;
     }
-    
-    /* Buttons */
-    .button-center .nav-button,
-    .nav-button {
-        width: 100%;
-        padding: 0.7rem 1rem;
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.6rem 0.65rem;
     }
-    
-    /* Spacing */
-    .info-box,
-    .style-box,
-    .key-point {
-        padding: var(--spacing-md);
+
+    .schedule-table thead th:first-child,
+    .schedule-table tbody th {
+        width: 5.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    /* Typography */
-    body { font-size: 16px; }
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.6rem; }
-    h3 { font-size: 1.4rem; }
-    h4 { font-size: 1.3rem; }
-    
-    /* Content spacing */
-    section { padding: 0.75rem; }
-    .time-notice { padding: 1rem; }
-    .key-point { padding: 0.75rem; }
+    .top-nav,
+    .bottom-nav {
+        gap: var(--space-xs);
+    }
+
+    .nav-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .note {
+        padding-left: var(--space-sm);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
 }

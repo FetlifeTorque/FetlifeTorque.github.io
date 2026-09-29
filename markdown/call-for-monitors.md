@@ -37,19 +37,9 @@ We're looking for at least 16 Full time monitors (32 half slots) total, hopefull
 
 Some of the monitors will be to help with the Meet Locker and crowd control.
 
-## Meet Rack Setup Crew
+Not looking to monitor? We also need a Setup and Teardown crew, which is a shorter and more concrete commitment.
 
-In addition to monitors, the Meet Rack we need volunteers to help us set up and tear down the space. It is a quick transition between the end of classes and the beginning of the party, and we desperately need all the extra help we can get here.
-
-This is a great opportunity to help make the Rack a successful experience for everyone while still getting the opportunity to participate in the grope-a-thon!
-
-Saturday evening 7:00–8:00 PM
-
-### We are particularly looking for people with these (not required) skills:
-
-*   Have comfort with tying basic knots and rope tension
-*   Feel comfortable climbing/standing on precarious things
-*   Can move heavy items
+[Setup Crew Details](https://meet-rack.com/setup-crew.html)
 
 If you're able to help, please reach out to [Fetlife - Melee](https://www.fetlife.com/melee) or [Fetlife - Torque](https://www.fetlife.com/torque) or @Melee or @Torque on Discord as soon as possible.
 

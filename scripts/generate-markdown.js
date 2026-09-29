@@ -16,7 +16,8 @@ const pages = [
   "speed-meeting.html",
   "aftercare.html",
   "call-for-monitors.html",
-  "monitor-guide.html"
+  "monitor-guide.html",
+  "setup-crew.html"
 ];
 
 const eventJs = fs.readFileSync(path.join(root, "event.js"), "utf8");

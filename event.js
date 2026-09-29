@@ -3,7 +3,8 @@ window.EVENT = {
   year: 2026,
   fullName: "Dark Odyssey: Surrender",
   day: "Saturday",
-  heroTagline: "The Meet Rack: Come Hungry",
+  heroTagline: "The Meet Rack:",
+  heroTaglineAccent: "Come Hungry",
   siteUrl: "https://meet-rack.com",
 
   venue: {
@@ -74,15 +75,15 @@ window.EVENT = {
       column: "rack"
     },
 
-    monitorShift2Start: {
-      time: "8:30 PM",
-      label: "Monitor Shift 2 Start",
-      column: "monitors"
-    },
-
     monitorShift1End: {
       time: "9:00 PM",
       label: "Monitor Shift 1 Ends",
+      column: "monitors"
+    },
+
+    monitorShift2Start: {
+      time: "9:00 PM",
+      label: "Monitor Shift 2 Start",
       column: "monitors"
     },
 
@@ -100,13 +101,7 @@ window.EVENT = {
 
     teardown: {
       time: "10:30 PM",
-      label: "All Done, start Teardown",
-      column: "setup"
-    },
-
-    setupCrew: {
-      time: "7:00–8:00 PM",
-      label: "Setup crew window",
+      label: "Start Tear down",
       column: "setup"
     }
   }
