@@ -19,7 +19,7 @@ window.EVENT = {
 
   fetlife: {
     // Paste the Fetlife event URL when the event page exists.
-    eventUrl: ""
+    eventUrl: "https://fetlife.com/events/2026/10/24/the-meet-rack-meet-locker-opmyir"
   },
 
   // column: "rack" | "locker" | "monitors" | "setup"
