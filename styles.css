@@ -346,6 +346,31 @@ body.aftercare main li:nth-child(even) {
     background: rgba(153, 39, 74, 0.28);
 }
 
+/* Meet Locker FAQ: same zebra idea, one band per Q+A pair. */
+.qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+}
+
+.qa-pair {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-sm);
+}
+
+.qa-pair > *:last-child {
+    margin-bottom: 0;
+}
+
+.qa-pair:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.qa-pair:nth-child(even) {
+    background: rgba(153, 39, 74, 0.28);
+}
+
 hr {
     border: 0;
     height: 1px;
