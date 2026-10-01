@@ -326,6 +326,26 @@ li::marker {
     color: var(--wine-600);
 }
 
+/* Aftercare lists: soft zebra striping so long bullet blocks read more easily. */
+body.aftercare main ul {
+    list-style-position: outside;
+    padding-left: 1.5rem;
+}
+
+body.aftercare main li {
+    margin-bottom: 0;
+    padding: 0.55rem 0.85rem 0.55rem 0.35rem;
+    border-radius: var(--radius-sm);
+}
+
+body.aftercare main li:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.aftercare main li:nth-child(even) {
+    background: rgba(153, 39, 74, 0.28);
+}
+
 hr {
     border: 0;
     height: 1px;
