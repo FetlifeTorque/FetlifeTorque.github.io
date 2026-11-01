@@ -326,6 +326,11 @@ li::marker {
     color: var(--wine-600);
 }
 
+/* Meet Locker lists: wine-600 markers disappear on the near-black page. */
+body.meet-locker li::marker {
+    color: var(--rose-300);
+}
+
 /* Aftercare lists: soft zebra striping so long bullet blocks read more easily. */
 body.aftercare main ul {
     list-style-position: outside;
